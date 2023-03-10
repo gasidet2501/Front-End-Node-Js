@@ -10,8 +10,8 @@ const app = express();
 
 // Base URL for the API
 //const base_url = "https://api.example.com";
-const base_url = "http://localhost:3000";
-//const base_url = "http://node41091-noderest.proen.app.ruk-com.cloud";
+// const base_url = "http://localhost:3000";
+const base_url = "http://node42605-env-4434838.proen.app.ruk-com.cloud:11447";
 
 // Set the template engine
 app.set("views", path.join(__dirname, "/public/views"));

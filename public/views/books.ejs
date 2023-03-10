@@ -28,5 +28,32 @@
   <div class="link-center">
     <a href="/create">Create New Book</a>
   </div>
+
+  <h1>Books1</h1>
+  <table class="book-table">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+    <% for(var i=0; i < books1.length; i++) { %>
+    <tr>
+      <td><%= books1[i].title %></td>
+      <td><%= books1[i].author %></td>
+      <td>
+        <a href="/book/<%= books1[i].id %>">View</a>
+        <a href="/update/<%= books1[i].id %>">Edit</a>
+        <a href="/delete/<%= books1[i].id %>">Delete</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <div class="link-center">
+    <a href="/create">Create New Book</a>
+  </div>
+
+
+  
+
 </body>
 </html>

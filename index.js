@@ -25,12 +25,25 @@ app.use(express.static(__dirname + "/public"));
 app.get("/", async (req, res) => {
   try {
     const response = await axios.get(base_url + "/books");
-    res.render("books", { books: response.data });
+    // res.render("books", { books: response.data });
+    const respons = await axios.get(base_url + "/books1");
+    res.render("books", { books: response.data, books1: respons.data});  //"books"คือชื่อไฟล์ .ejs  { books: response.data} คือชื่อตัวแปรที่ส่งไป
   } catch (err) {
     console.error(err);
     res.status(500).send("Error");
   }
 });
+
+// app.get("/", async (req, res) => {
+//   try {
+//     const respons = await axios.get(base_url + "/books1");
+//     res.render("books", { books: respons.data });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Error");
+//   }
+// });
+
 
 app.get("/book/:id", async (req, res) => {
   try {
